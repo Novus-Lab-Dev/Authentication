@@ -1,0 +1,24 @@
+{
+  "name": "digest-auth",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:digest": "concurrently \"npm run start-digest:server\" \"npm run start-digest:client\"",
+    "start-digest:server": "node digest-auth/server/server.js",
+    "start-digest:client": "npm --prefix digest-auth/client run dev",
+    "start:basic": "concurrently \"npm run start-basic:server\" \"npm run start-basic:client\"",
+    "start-basic:server": "node basic-auth/server/server.js",
+    "start-basic:client": "npm --prefix basic-auth/client run dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "concurrently": "^9.2.1",
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
