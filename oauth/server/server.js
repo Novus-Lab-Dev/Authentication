@@ -112,10 +112,10 @@ app.get("/auth/callback", async (req, res) => {
         res.cookie("session", sessionToken, {
             httpOnly: true,
             secure: false,
-            sameSite: "none"
+            sameSite: "lax"
         });
 
-        res.send("Logged into SatuJobs");
+        res.redirect("http://localhost:5173/callback");
 
     } catch (err) {
         console.log(err.message);
