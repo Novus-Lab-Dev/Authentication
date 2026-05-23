@@ -12,7 +12,10 @@
     "start-basic:client": "npm --prefix basic-auth/client run dev",
     "start:api-key": "concurrently \"npm run start-api-key:server\" \"npm run start-api-key:client\"",
     "start-api-key:server": "node api-key-auth/server/index.js",
-    "start-api-key:client": "npm --prefix api-key-auth/client run dev"
+    "start-api-key:client": "npm --prefix api-key-auth/client run dev",
+    "start:session": "concurrently \"npm run start-session:server\" \"npm run start-session:client\"",
+    "start-session:server": "node session-auth/server/index.js",
+    "start-session:client": "npm --prefix session-auth/client run dev"
   },
   "keywords": [],
   "author": "",
@@ -21,10 +24,13 @@
   "dependencies": {
     "bcrypt": "^6.0.0",
     "concurrently": "^9.2.1",
+    "connect-redis": "^9.0.0",
     "cors": "^2.8.6",
     "crypto": "^1.0.1",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "mongoose": "^9.6.2"
+    "express-session": "^1.19.0",
+    "mongoose": "^9.6.2",
+    "redis": "^5.12.1"
   }
 }
