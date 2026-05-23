@@ -92,7 +92,7 @@ app.get("/me", (req, res) => {
         const user = verifyAccessToken(token);
         res.json({ user });
     } catch {
-        res.sendStatus(403);
+        res.sendStatus(401);
     }
 });
 

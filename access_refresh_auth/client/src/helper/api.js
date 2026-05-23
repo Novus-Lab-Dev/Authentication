@@ -25,6 +25,10 @@ api.interceptors.response.use(
   async (err) => {
     const original = err.config;
 
+    if (original?.url === "/refresh") {
+      return Promise.reject(err);
+    }
+
     if (err.response?.status === 401 && !original._retry) {
       original._retry = true;
 
