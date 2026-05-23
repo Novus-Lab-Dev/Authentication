@@ -9,7 +9,10 @@
     "start-digest:client": "npm --prefix digest-auth/client run dev",
     "start:basic": "concurrently \"npm run start-basic:server\" \"npm run start-basic:client\"",
     "start-basic:server": "node basic-auth/server/server.js",
-    "start-basic:client": "npm --prefix basic-auth/client run dev"
+    "start-basic:client": "npm --prefix basic-auth/client run dev",
+    "start:api-key": "concurrently \"npm run start-api-key:server\" \"npm run start-api-key:client\"",
+    "start-api-key:server": "node api-key-auth/server/index.js",
+    "start-api-key:client": "npm --prefix api-key-auth/client run dev"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +22,9 @@
     "bcrypt": "^6.0.0",
     "concurrently": "^9.2.1",
     "cors": "^2.8.6",
-    "express": "^5.2.1"
+    "crypto": "^1.0.1",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.6.2"
   }
 }
