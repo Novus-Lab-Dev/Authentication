@@ -1,0 +1,28 @@
+body {
+  font-family: Arial;
+  background: #111;
+  color: white;
+}
+
+.container {
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px;
+  margin-right: 5px;
+  margin-top: 10px;
+}
+
+pre {
+  background: #222;
+  padding: 20px;
+  margin-top: 20px;
+}
