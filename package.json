@@ -18,7 +18,10 @@
     "start-session:client": "npm --prefix session-auth/client run dev",
     "start:bearer-jwt": "concurrently \"npm run start-bearer-jwt:server\" \"npm run start-bearer-jwt:client\"",
     "start-bearer-jwt:server": "node bearer-jwt/server/server.js",
-    "start-bearer-jwt:client": "npm --prefix bearer-jwt/client run dev"
+    "start-bearer-jwt:client": "npm --prefix bearer-jwt/client run dev",
+    "start:access-refresh-token": "concurrently \"npm run start-access-refresh-token:server\" \"npm run start-access-refresh-token:client\"",
+    "start-access-refresh-token:server": "node access_refresh_auth/server/server.js",
+    "start-access-refresh-token:client": "npm --prefix access_refresh_auth/client run dev"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +32,7 @@
     "bcryptjs": "^3.0.3",
     "concurrently": "^9.2.1",
     "connect-redis": "^9.0.0",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
     "crypto": "^1.0.1",
     "dotenv": "^17.4.2",
