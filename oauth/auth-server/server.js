@@ -530,7 +530,7 @@ app.get("/authorize", async (req, res) => {
     return res.status(400).send(renderNoticePage({ title: "Invalid redirect URI", heading: "Invalid redirect URI", message: "The requested redirect URI is not allowed for this client.", tone: "danger" }));
   }
 
-  if (!req.session.userId) {
+  if (!req.session.userId) {//Login and set session, then redirect back to /authorize with original query params to show consent screen
     const returnTo = `/authorize?${new URLSearchParams({
       client_id,
       redirect_uri,

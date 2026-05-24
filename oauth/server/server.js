@@ -130,7 +130,7 @@ app.get("/auth/callback", async (req, res) => {
     }
 
     try {
-        const tokenResponse = await axios.post(OAUTH_CONFIG.token_url, {
+        const tokenResponse = await axios.post(OAUTH_CONFIG.token_url, { //get token by code
             grant_type: "authorization_code",
             code,
             client_id: OAUTH_CONFIG.client_id,
@@ -140,7 +140,7 @@ app.get("/auth/callback", async (req, res) => {
 
         const { access_token, refresh_token } = tokenResponse.data;
 
-        const meResponse = await axios.get(OAUTH_CONFIG.me_url, {
+        const meResponse = await axios.get(OAUTH_CONFIG.me_url, { //get profile info by token
             headers: {
                 Authorization: `Bearer ${access_token}`,
             },
